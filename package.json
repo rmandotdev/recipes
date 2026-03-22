@@ -3,21 +3,22 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "lint": "biome check",
+    "format": "biome check --fix",
     "build": "astro build",
-    "deploy": "wrangler deploy",
-    "dev": "astro dev"
+    "dev": "astro dev",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.2.0",
-    "astro": "^6.0.0-beta.14",
-    "tailwindcss": "^4.2.0"
+    "@astrojs/starlight": "^0.38.2",
+    "astro": "^6.0.8"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "wrangler": "^4.67.0"
+    "@biomejs/biome": "2.4.8",
+    "@gameroman/config": "^0.0.3",
+    "wrangler": "^4.76.0"
   },
   "overrides": {
-    "esbuild": "^0.27.3",
-    "unstorage": "alpha"
+    "esbuild": "^0.27.4"
   }
 }

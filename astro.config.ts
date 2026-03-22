@@ -1,9 +1,31 @@
+import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 
-import tailwindcss from "@tailwindcss/vite";
-
 export default defineConfig({
-  output: "static",
-  vite: { plugins: [tailwindcss()] },
   site: "https://recipes.rman.dev",
+  integrations: [
+    starlight({
+      title: "My Docs",
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/withastro/starlight",
+        },
+      ],
+      sidebar: [
+        {
+          label: "Guides",
+          items: [
+            // Each item here is one entry in the navigation menu.
+            { label: "Example Guide", slug: "guides/example" },
+          ],
+        },
+        {
+          label: "Reference",
+          autogenerate: { directory: "reference" },
+        },
+      ],
+    }),
+  ],
 });
