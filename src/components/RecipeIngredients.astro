@@ -1,0 +1,93 @@
+---
+interface Ingredient {
+  name: string;
+  amount: string | number;
+  unit?: string;
+}
+
+interface Props {
+  items: Ingredient[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="ingredients-container">
+  <ul class="ingredient-list">
+    {items.map((item) => (
+        <li>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox" />
+            <span class="ingredient-text">
+              <span class="amount">
+                {item.amount} {item.unit || ""}
+              </span>
+              {item.name}
+            </span>
+          </label>
+        </li>
+      ))}
+  </ul>
+</section>
+
+<style>
+.ingredients-container {
+  margin: 2rem 0;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.ingredient-text {
+  font-size: var(--sl-text-base);
+  color: var(--sl-color-white);
+}
+
+.ingredient-label {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  transition: background-color 0.2s ease;
+}
+
+.ingredient-label:last-child {
+  border-bottom: none;
+}
+
+.ingredient-label:hover {
+  background-color: var(--sl-color-gray-6);
+}
+
+/* The "Task Completed" logic */
+.ingredient-label:has(input:checked) {
+  background-color: var(--sl-color-gray-6);
+}
+
+.ingredient-label:has(input:checked) .ingredient-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.ingredient-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: var(--sl-color-accent);
+}
+
+.amount {
+  font-weight: 700;
+  margin-right: 0.25rem;
+  color: var(--sl-color-accent-high);
+}
+</style>

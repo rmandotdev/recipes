@@ -3,27 +3,29 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://recipes.rman.dev",
+
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "Recipes",
+
+      defaultLocale: "root",
+      locales: {
+        root: { label: "English", lang: "en" },
+        ru: { label: "Русский", lang: "ru" },
+      },
+
       social: [
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/withastro/starlight",
+          href: "https://github.com/rmandotdev/recipes",
         },
       ],
+
       sidebar: [
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Recipes",
+          autogenerate: { directory: "recipes" },
         },
       ],
     }),

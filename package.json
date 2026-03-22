@@ -2,6 +2,9 @@
   "name": "recipes",
   "type": "module",
   "private": true,
+  "imports": {
+    "#components/*": "./src/components/*"
+  },
   "scripts": {
     "lint": "biome check",
     "format": "biome check --fix",
