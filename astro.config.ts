@@ -6,7 +6,7 @@ export default defineConfig({
 
   integrations: [
     starlight({
-      title: "Recipes",
+      title: { en: "Recipes", ru: "Рецепты" },
 
       defaultLocale: "root",
       locales: {
@@ -25,6 +25,7 @@ export default defineConfig({
       sidebar: [
         {
           label: "Recipes",
+          translations: { ru: "Рецепты" },
           autogenerate: { directory: "recipes" },
         },
       ],
