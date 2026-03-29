@@ -1,8 +1,15 @@
 ---
+type Unit = "g" | "kg";
+
+interface AmountRange {
+  from: number;
+  to: number;
+}
+
 interface Ingredient {
   name: string;
-  amount: string | number;
-  unit?: string;
+  amount: number | AmountRange;
+  unit?: Unit;
 }
 
 interface Props {
@@ -10,6 +17,14 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
+  if (typeof amount === "string" || typeof amount === "number") {
+    return `${amount} ${unit || ""}`;
+  }
+
+  return `${amount.from} - ${amount.to} ${unit || ""}`;
+}
 ---
 
 <section class="ingredients-container">
@@ -19,9 +34,7 @@ const { items } = Astro.props;
           <label class="ingredient-label">
             <input type="checkbox" class="ingredient-checkbox" />
             <span class="ingredient-text">
-              <span class="amount">
-                {item.amount} {item.unit || ""}
-              </span>
+              <span class="amount">{getAmount(item.amount, item.unit)}</span>
               {item.name}
             </span>
           </label>

@@ -1,0 +1,20 @@
+---
+title: Pea Soup
+description: How to make Pea Soup.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+
+## Ingredients
+
+<Ingredients
+  items={[
+    { name: "Smoked Pork Ribs", amount: 1, unit: "kg" },
+    { name: "Peas", amount: { from: 200, to: 300 }, unit: "g" },
+    { name: "Carrots", amount: 2 },
+    { name: "Potatoes", amount: 3 },
+    { name: "Onions", amount: 2 },
+  ]}
+/>
+
+## Instructions
