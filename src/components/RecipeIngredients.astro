@@ -1,5 +1,5 @@
 ---
-type Unit = "g" | "kg";
+type Unit = ("g" | "kg" | "г" | "кг") | (string & {});
 
 interface AmountRange {
   from: number;
@@ -68,6 +68,7 @@ function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
   align-items: center;
   padding: 0.75rem 1rem;
   cursor: pointer;
+  margin: 0;
   border-bottom: 1px solid var(--sl-color-hairline);
   transition: background-color 0.2s ease;
 }
