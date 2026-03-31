@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.0.8"
+    "astro": "^6.1.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.8",
-    "@gameroman/config": "^0.0.3",
-    "wrangler": "^4.76.0"
+    "@biomejs/biome": "2.4.10",
+    "@gameroman/config": "^0.0.5",
+    "wrangler": "^4.79.0"
   },
   "overrides": {
     "esbuild": "^0.27.4"
