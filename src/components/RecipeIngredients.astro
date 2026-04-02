@@ -1,5 +1,16 @@
 ---
-type Unit = ("g" | "kg" | "г" | "кг" | "litres" | "литров") | (string & {});
+type Unit =
+  | "g"
+  | "kg"
+  | "г"
+  | "кг"
+  | "litres"
+  | "литров"
+  | "cups"
+  | "teaspoon"
+  | "стаканов"
+  | "чайная ложка"
+  | (string & {});
 
 interface AmountRange {
   from: number;
