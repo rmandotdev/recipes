@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.10",
-    "@gameroman/config": "^0.0.6",
+    "@gameroman/config": "^0.1.0",
     "wrangler": "^4.80.0"
   },
   "overrides": {
