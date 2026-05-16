@@ -26,7 +26,7 @@ export default defineConfig({
         {
           label: "Recipes",
           translations: { ru: "Рецепты" },
-          autogenerate: { directory: "recipes" },
+          items: [{ autogenerate: { directory: "recipes" } }],
         },
       ],
     }),
