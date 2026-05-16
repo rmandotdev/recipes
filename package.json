@@ -13,15 +13,17 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.1.3"
+    "@astrojs/starlight": "0.39.2",
+    "astro": "6.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.10",
-    "@gameroman/config": "^0.1.0",
-    "wrangler": "^4.80.0"
+    "@biomejs/biome": "2.4.15",
+    "@gameroman/config": "0.1.0",
+    "wrangler": "4.90.1"
   },
   "overrides": {
-    "esbuild": "^0.28.0"
+    "esbuild": "0.28.0",
+    "is-docker": "4.0.0",
+    "unstorage": "2.0.0-alpha.7"
   }
 }
