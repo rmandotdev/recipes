@@ -1,16 +1,5 @@
 ---
-type Unit =
-  | "g"
-  | "kg"
-  | "г"
-  | "кг"
-  | "litres"
-  | "литров"
-  | "cups"
-  | "teaspoon"
-  | "стакана"
-  | "чайная ложка"
-  | (string & {});
+import { localizeUnit, type Unit } from "#lib/localize";
 
 interface AmountRange {
   from: number;
@@ -27,14 +16,19 @@ interface Props {
   items: Ingredient[];
 }
 
+const { lang } = Astro.locals.starlightRoute;
 const { items } = Astro.props;
 
 function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
   if (typeof amount === "string" || typeof amount === "number") {
-    return `${amount} ${unit || ""}`;
+    return unit
+      ? `${amount} ${localizeUnit(unit, amount, lang)}`
+      : String(amount);
   }
 
-  return `${amount.from} - ${amount.to} ${unit || ""}`;
+  return unit
+    ? `${amount.from} - ${amount.to} ${localizeUnit(unit, amount.to, lang)}`
+    : `${amount.from} - ${amount.to}`;
 }
 ---
 
