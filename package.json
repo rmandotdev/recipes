@@ -4,6 +4,7 @@
   "type": "module",
   "imports": {
     "#components/*": "./src/components/*",
+    "#i18n/*": "./src/i18n/*.ts",
     "#lib/*": "./src/lib/*.ts"
   },
   "scripts": {

@@ -1,13 +1,17 @@
 ---
-import { localizeUnit, type Unit } from "#lib/localize";
+import type { LocalesTable } from "#i18n/locales";
+import { capitalize } from "#lib/capitalize";
+import { localize } from "#lib/localize";
 
 interface AmountRange {
   from: number;
   to: number;
 }
 
+type Unit = LocalesTable<"units">;
+
 interface Ingredient {
-  name: string;
+  id: LocalesTable<"items">;
   amount: number | AmountRange;
   unit?: Unit;
 }
@@ -19,16 +23,23 @@ interface Props {
 const { lang } = Astro.locals.starlightRoute;
 const { items } = Astro.props;
 
-function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
-  if (typeof amount === "string" || typeof amount === "number") {
-    return unit
-      ? `${amount} ${localizeUnit(unit, amount, lang)}`
-      : String(amount);
-  }
+function getAmount(amount: number | AmountRange, unit?: Unit): string {
+  const itemAmount = getItemAmount(amount);
+  if (!unit) return itemAmount;
 
-  return unit
-    ? `${amount.from} - ${amount.to} ${localizeUnit(unit, amount.to, lang)}`
+  const localizedUnit = localize("units", unit, getMaxItemAmount(amount), lang);
+
+  return `${itemAmount} ${localizedUnit}`;
+}
+
+function getItemAmount(amount: number | AmountRange): string {
+  return typeof amount === "number"
+    ? `${amount}`
     : `${amount.from} - ${amount.to}`;
+}
+
+function getMaxItemAmount(amount: number | AmountRange): number {
+  return typeof amount === "number" ? amount : amount.to;
 }
 ---
 
@@ -39,8 +50,11 @@ function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
           <label class="ingredient-label">
             <input type="checkbox" class="ingredient-checkbox" />
             <span class="ingredient-text">
-              <span class="amount">{getAmount(item.amount, item.unit)}</span>
-              {item.name}
+              {item.unit ? (
+                <>{capitalize(localize("items", item.id, getMaxItemAmount(item.amount), lang))} — <span class="amount">{getAmount(item.amount, item.unit)}</span></>
+              ) : (
+                <><span class="amount">{getAmount(item.amount)}</span> {localize("items", item.id, getMaxItemAmount(item.amount), lang)}</>
+              )}
             </span>
           </label>
         </li>
