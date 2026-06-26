@@ -27,9 +27,26 @@ export const LOCALES_TABLE = {
         other: "чайной ложки",
       },
     },
+    tablespoon: {
+      en: { one: "tablespoon", other: "tablespoons" },
+      ru: {
+        one: "столовая ложка",
+        few: "столовые ложки",
+        many: "столовых ложек",
+        other: "столовой ложки",
+      },
+    },
   },
 
   items: {
+    bacon: {
+      en: { other: "bacon" },
+      ru: { other: "бекон" },
+    },
+    "black-pepper": {
+      en: { other: "black pepper" },
+      ru: { other: "чёрный перец" },
+    },
     egg: {
       en: { one: "egg", other: "eggs" },
       ru: { one: "яйцо", many: "яиц", other: "яйца" },
@@ -66,6 +83,14 @@ export const LOCALES_TABLE = {
       en: { one: "onion", other: "onions" },
       ru: { one: "луковица", many: "луковиц", other: "луковицы" },
     },
+    paprika: {
+      en: { other: "paprika" },
+      ru: { other: "паприка" },
+    },
+    parmesan: {
+      en: { other: "parmesan" },
+      ru: { other: "пармезан" },
+    },
     rice: {
       en: { other: "rice" },
       ru: { other: "рис" },
@@ -77,6 +102,14 @@ export const LOCALES_TABLE = {
     salt: {
       en: { other: "salt" },
       ru: { other: "соль" },
+    },
+    spaghetti: {
+      en: { other: "spaghetti" },
+      ru: { other: "спагетти" },
+    },
+    "sunflower-oil": {
+      en: { other: "sunflower oil" },
+      ru: { other: "подсолнечное масло" },
     },
   },
 } as const satisfies Locales;
