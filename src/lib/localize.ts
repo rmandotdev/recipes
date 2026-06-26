@@ -1,16 +1,18 @@
+import type { Lang, OtherLang } from "#i18n/lang";
+import { toAllowedLang } from "#i18n/lang";
 import type { LocalesTable, LocalesTableKey } from "#i18n/locales";
 import { locales } from "#i18n/locales";
-import type { Lang } from "#i18n/types";
 
 export function localize<T extends LocalesTableKey, K extends LocalesTable<T>>(
   table: T,
   key: K,
   amount: number | string,
-  lang: Lang,
+  lang: Lang | OtherLang,
 ): string {
   const num = typeof amount === "string" ? parseFloat(amount) || 0 : amount;
-  const form = new Intl.PluralRules(lang).select(num);
+  const language = toAllowedLang(lang);
+  const form = new Intl.PluralRules(language).select(num);
   const map = locales[table][key];
-  const forms = map[lang] ?? map.en;
+  const forms = map[language] ?? map.en;
   return forms[form] ?? forms.other;
 }

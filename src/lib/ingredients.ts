@@ -1,5 +1,5 @@
+import type { Lang, OtherLang } from "#i18n/lang";
 import type { LocalesTable } from "#i18n/locales";
-import type { Lang } from "#i18n/types";
 import { capitalize } from "./capitalize";
 import { localize } from "./localize";
 
@@ -20,7 +20,7 @@ export function getItemAmount(amount: Amount): number {
   return typeof amount === "number" ? amount : amount.to;
 }
 
-export function getAmount(item: Ingredient, lang: Lang): string {
+export function getAmount(item: Ingredient, lang: Lang | OtherLang): string {
   const amount = item.amount;
   const unit = item.unit;
   const itemAmount =
@@ -37,7 +37,7 @@ type IngredientText =
 
 export function getIngredientText(
   item: Ingredient,
-  lang: Lang,
+  lang: Lang | OtherLang,
 ): IngredientText {
   const maxAmount = getItemAmount(item.amount);
   const localizedItem = localize("items", item.id, maxAmount, lang);
