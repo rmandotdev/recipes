@@ -47,6 +47,15 @@ export const LOCALES_TABLE = {
       en: { other: "black pepper" },
       ru: { other: "чёрный перец" },
     },
+    "bouillon-cube": {
+      en: { one: "bouillon cube", other: "bouillon cubes" },
+      ru: {
+        one: "бульонный кубик",
+        few: "бульонных кубика",
+        many: "бульонных кубиков",
+        other: "бульонного кубика",
+      },
+    },
     egg: {
       en: { one: "egg", other: "eggs" },
       ru: { one: "яйцо", many: "яиц", other: "яйца" },
@@ -54,6 +63,10 @@ export const LOCALES_TABLE = {
     lemon: {
       en: { one: "lemon", other: "lemons" },
       ru: { one: "лимон", many: "лимонов", other: "лимона" },
+    },
+    noodles: {
+      en: { one: "noodle", other: "noodles" },
+      ru: { other: "лапша" },
     },
     sugar: {
       en: { other: "sugar" },
@@ -74,6 +87,15 @@ export const LOCALES_TABLE = {
     carrot: {
       en: { one: "carrot", other: "carrots" },
       ru: { one: "морковка", many: "морковок", other: "морковки" },
+    },
+    "chicken-thigh": {
+      en: { one: "chicken thigh", other: "chicken thighs" },
+      ru: {
+        one: "куриное бедро",
+        few: "куриных бедра",
+        many: "куриных бёдер",
+        other: "куриного бедра",
+      },
     },
     potato: {
       en: { one: "potato", other: "potatoes" },
