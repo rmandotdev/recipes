@@ -70,6 +70,10 @@ export const LOCALES_TABLE = {
       en: { other: "rice" },
       ru: { other: "рис" },
     },
+    buckwheat: {
+      en: { other: "buckwheat" },
+      ru: { other: "гречка" },
+    },
     salt: {
       en: { other: "salt" },
       ru: { other: "соль" },
