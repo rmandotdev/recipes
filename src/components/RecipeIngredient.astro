@@ -1,0 +1,68 @@
+---
+import type { Ingredient } from "#lib/ingredients";
+import { getIngredientText } from "#lib/ingredients";
+
+interface Props {
+  item: Ingredient;
+}
+
+const { lang } = Astro.locals.starlightRoute;
+const { item } = Astro.props;
+
+const parts = getIngredientText(item, lang);
+---
+
+<!-- biome-ignore lint/a11y/noLabelWithoutControl: Likely false-positive because biome does not underastand that {string} is text -->
+<label class="ingredient-label">
+  <input type="checkbox" class="ingredient-checkbox" />
+  <span class="ingredient-text">
+    {parts.prefix}<span class="amount">{parts.amount}</span>{parts.suffix}
+  </span>
+</label>
+
+<style>
+.ingredient-text {
+  font-size: var(--sl-text-base);
+  color: var(--sl-color-white);
+}
+
+.ingredient-label {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  margin: 0;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  transition: background-color 0.2s ease;
+}
+
+.ingredient-label:last-child {
+  border-bottom: none;
+}
+
+.ingredient-label:hover {
+  background-color: var(--sl-color-gray-6);
+}
+
+.ingredient-label:has(input:checked) {
+  background-color: var(--sl-color-gray-6);
+}
+
+.ingredient-label:has(input:checked) .ingredient-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.ingredient-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: var(--sl-color-accent);
+}
+
+.amount {
+  font-weight: 700;
+  color: var(--sl-color-accent-high);
+}
+</style>

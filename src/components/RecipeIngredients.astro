@@ -1,50 +1,17 @@
 ---
-import { localizeUnit, type Unit } from "#lib/localize";
-
-interface AmountRange {
-  from: number;
-  to: number;
-}
-
-interface Ingredient {
-  name: string;
-  amount: number | AmountRange;
-  unit?: Unit;
-}
+import type { Ingredient } from "#lib/ingredients";
+import RecipeIngredient from "./RecipeIngredient.astro";
 
 interface Props {
   items: Ingredient[];
 }
 
-const { lang } = Astro.locals.starlightRoute;
 const { items } = Astro.props;
-
-function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
-  if (typeof amount === "string" || typeof amount === "number") {
-    return unit
-      ? `${amount} ${localizeUnit(unit, amount, lang)}`
-      : String(amount);
-  }
-
-  return unit
-    ? `${amount.from} - ${amount.to} ${localizeUnit(unit, amount.to, lang)}`
-    : `${amount.from} - ${amount.to}`;
-}
 ---
 
 <section class="ingredients-container">
   <ul class="ingredient-list">
-    {items.map((item) => (
-        <li>
-          <label class="ingredient-label">
-            <input type="checkbox" class="ingredient-checkbox" />
-            <span class="ingredient-text">
-              <span class="amount">{getAmount(item.amount, item.unit)}</span>
-              {item.name}
-            </span>
-          </label>
-        </li>
-      ))}
+    {items.map((item) => <li><RecipeIngredient {item}/></li>)}
   </ul>
 </section>
 
@@ -61,52 +28,5 @@ function getAmount(amount: string | number | AmountRange, unit?: Unit): string {
   border: 1px solid var(--sl-color-hairline);
   border-radius: 0.75rem;
   overflow: hidden;
-}
-
-.ingredient-text {
-  font-size: var(--sl-text-base);
-  color: var(--sl-color-white);
-}
-
-.ingredient-label {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  margin: 0;
-  border-bottom: 1px solid var(--sl-color-hairline);
-  transition: background-color 0.2s ease;
-}
-
-.ingredient-label:last-child {
-  border-bottom: none;
-}
-
-.ingredient-label:hover {
-  background-color: var(--sl-color-gray-6);
-}
-
-/* The "Task Completed" logic */
-.ingredient-label:has(input:checked) {
-  background-color: var(--sl-color-gray-6);
-}
-
-.ingredient-label:has(input:checked) .ingredient-text {
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-
-.ingredient-checkbox {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-right: 1rem;
-  cursor: pointer;
-  accent-color: var(--sl-color-accent);
-}
-
-.amount {
-  font-weight: 700;
-  margin-right: 0.25rem;
-  color: var(--sl-color-accent-high);
 }
 </style>
