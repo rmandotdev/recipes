@@ -4,6 +4,8 @@ description: Как приготовить яичницу.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ингредиенты
 
@@ -11,6 +13,12 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Рецепт
 
-1. Разогрейте сковороду на среднем огне.
-2. Разбейте яйца прямо в сковороду.
-3. Готовьте 2-3 минуты, пока белок не схватится, а желток останется жидким.
+<RecipeSteps
+  steps={[
+    text("Разогрейте сковороду на среднем огне"),
+    text("Разбейте яйца прямо в сковороду"),
+    text(
+      "Готовьте 2-3 минуты, пока белок не схватится, а желток останется жидким",
+    ),
+  ]}
+/>

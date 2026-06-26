@@ -4,6 +4,8 @@ description: How to make Buckwheat.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -21,17 +23,25 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 If you have a multi-cooker, the recipe is simple:
 
-1. Pour the buckwheat into the multi-cooker.
-2. Add the water and salt.
-3. Let it cook for 15-20 minutes.
+<RecipeSteps
+  steps={[
+    text("Pour the buckwheat into the multi-cooker"),
+    text("Add the water and salt"),
+    text("Let it cook for 15-20 minutes"),
+  ]}
+/>
 
 ### In a Pot
 
-1. Pour the water into a pot and bring to a boil.
-2. Reduce the heat to low.
-3. Pour the buckwheat into the pot.
-4. Add the salt.
-5. Cover the pot tightly with a lid.
-6. Cook for 15-20 minutes without opening the lid.
-7. Turn off the heat.
-8. Let the buckwheat rest under the lid for another 5-10 minutes.
+<RecipeSteps
+  steps={[
+    text("Pour the water into a pot and bring to a boil"),
+    text("Reduce the heat to low"),
+    text("Pour the buckwheat into the pot"),
+    text("Add the salt"),
+    text("Cover the pot tightly with a lid"),
+    text("Cook for 15-20 minutes without opening the lid"),
+    text("Turn off the heat"),
+    text("Let the buckwheat rest under the lid for another 5-10 minutes"),
+  ]}
+/>

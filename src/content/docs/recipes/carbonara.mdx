@@ -4,6 +4,8 @@ description: How to make Carbonara.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -23,15 +25,23 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Instructions
 
-1. Bring salted water to a boil.
-2. Cook the spaghetti until al dente.
-3. While the pasta cooks, fry the bacon in sunflower oil until rendered but still soft.
-4. Separate 3 egg yolks. Add 1 whole egg.
-5. Whisk the eggs with parmesan, black pepper and paprika.
-6. Reserve 300ml of pasta water. Drain the spaghetti.
-7. Reduce heat to low. Add the spaghetti to the pan with the bacon. Toss.
-8. Remove from heat.
-9. Pour the egg mixture over the pasta. Toss quickly.
-10. Return to low heat. Stir constantly for 1 minute until creamy.
-11. Add pasta water gradually as needed.
-12. Serve with extra parmesan and black pepper.
+<RecipeSteps
+  steps={[
+    text("Bring salted water to a boil"),
+    text("Cook the spaghetti until al dente"),
+    text(
+      "While the pasta cooks, fry the bacon in sunflower oil until rendered but still soft",
+    ),
+    text("Separate 3 egg yolks. Add 1 whole egg"),
+    text("Whisk the eggs with parmesan, black pepper and paprika"),
+    text("Reserve 300ml of pasta water. Drain the spaghetti"),
+    text(
+      "Reduce heat to low. Add the spaghetti to the pan with the bacon. Toss",
+    ),
+    text("Remove from heat"),
+    text("Pour the egg mixture over the pasta. Toss quickly"),
+    text("Return to low heat. Stir constantly for 1 minute until creamy"),
+    text("Add pasta water gradually as needed"),
+    text("Serve with extra parmesan and black pepper"),
+  ]}
+/>

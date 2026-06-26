@@ -4,6 +4,8 @@ description: How to make Chicken Soup.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -18,10 +20,14 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Instructions
 
-1. Put the chicken thighs in a pot with the water. Bring to a boil.
-2. Skim off any foam.
-3. Add the bouillon cubes.
-4. Simmer for 30-40 minutes until the chicken is cooked through.
-5. Remove the chicken thighs. Shred the meat and return it to the pot.
-6. Add the noodles and cook for 5-7 minutes until tender.
-7. Serve hot.
+<RecipeSteps
+  steps={[
+    text("Put the chicken thighs in a pot with the water. Bring to a boil"),
+    text("Skim off any foam"),
+    text("Add the bouillon cubes"),
+    text("Simmer for 30-40 minutes until the chicken is cooked through"),
+    text("Remove the chicken thighs. Shred the meat and return it to the pot"),
+    text("Add the noodles and cook for 5-7 minutes until tender"),
+    text("Serve hot"),
+  ]}
+/>

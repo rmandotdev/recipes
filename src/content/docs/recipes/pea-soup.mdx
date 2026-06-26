@@ -4,6 +4,8 @@ description: How to make Pea Soup.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -20,9 +22,15 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Instructions
 
-1. Place the smoked ribs in a pot with the water and begin cooking.
-2. Peel and chop the carrots, potatoes, and onions.
-3. Sauté the onions and carrots in a pan, then add them to the pot.
-4. Cover the pot with a lid and simmer on low heat for 1.5 to 2 hours.
-5. Add the peas to the pot and simmer for another hour.
-6. Add the potatoes and simmer for a final 30 to 50 minutes until tender.
+<RecipeSteps
+  steps={[
+    text("Place the smoked ribs in a pot with the water and begin cooking"),
+    text("Peel and chop the carrots, potatoes, and onions"),
+    text("Sauté the onions and carrots in a pan, then add them to the pot"),
+    text("Cover the pot with a lid and simmer on low heat for 1.5 to 2 hours"),
+    text("Add the peas to the pot and simmer for another hour"),
+    text(
+      "Add the potatoes and simmer for a final 30 to 50 minutes until tender",
+    ),
+  ]}
+/>
