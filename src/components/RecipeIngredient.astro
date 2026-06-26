@@ -12,6 +12,7 @@ const { item } = Astro.props;
 const parts = getIngredientText(item, lang);
 ---
 
+<!-- biome-ignore lint/a11y/noLabelWithoutControl: Likely false-positive because biome does not underastand that {string} is text -->
 <label class="ingredient-label">
   <input type="checkbox" class="ingredient-checkbox" />
   <span class="ingredient-text">
