@@ -19,8 +19,8 @@
     "unstorage": "2.0.0-alpha.7"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.41.0",
-    "astro": "7.0.2"
+    "@astrojs/starlight": "0.41.3",
+    "astro": "7.0.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
