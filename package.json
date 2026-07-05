@@ -16,13 +16,13 @@
     "test": "bun test --dots"
   },
   "overrides": {
-    "@astrojs/markdown-remark": "7.2.0",
+    "@astrojs/markdown-remark": "7.2.1",
     "esbuild": "0.28.1",
     "is-docker": "4.0.0",
     "unstorage": "2.0.0-alpha.7"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.40.0",
+    "@astrojs/starlight": "0.41.3",
     "astro": "6.4.8"
   },
   "devDependencies": {
