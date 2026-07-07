@@ -1,0 +1,35 @@
+---
+title: Куриный суп
+description: Как приготовить куриный суп.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
+
+## Ингредиенты
+
+<Ingredients
+  items={[
+    { id: "chicken-thigh", amount: 1200, unit: "g" },
+    { id: "water", amount: 4, unit: "litre" },
+    { id: "bouillon-cube", amount: 2 },
+    { id: "noodles", amount: 180, unit: "g" },
+  ]}
+/>
+
+## Приготовление
+
+<RecipeSteps
+  steps={[
+    text("Положите куриные бёдра в кастрюлю с водой. Доведите до кипения"),
+    text("Снимите пену"),
+    text("Добавьте бульонные кубики"),
+    text("Варите 30-40 минут до готовности курицы"),
+    text(
+      "Достаньте куриные бёдра. Разделите мясо на кусочки и верните в кастрюлю",
+    ),
+    text("Добавьте лапшу и варите 5-7 минут до готовности"),
+    text("Подавайте горячим"),
+  ]}
+/>

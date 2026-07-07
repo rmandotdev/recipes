@@ -1,0 +1,48 @@
+---
+title: Гречка
+description: Как приготовить гречку.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
+
+## Ингредиенты
+
+<Ingredients
+  items={[
+    { id: "water", amount: 2, unit: "cup" },
+    { id: "buckwheat", amount: 1, unit: "cup" },
+    { id: "salt", amount: 0.5, unit: "teaspoon" },
+  ]}
+/>
+
+## Рецепт
+
+### В мультиварке
+
+Если есть мультиварка, то рецепт простой:
+
+<RecipeSteps
+  steps={[
+    text("Насыпьте гречку в мультиварку"),
+    text("Залейте водой и добавьте соль"),
+    text("Оставьте вариться на 15-20 минут"),
+  ]}
+/>
+
+### В кастрюле
+
+<RecipeSteps
+  steps={[
+    text("Налейте воду в кастрюлю"),
+    text("Доведите воду до кипения"),
+    text("Убавьте огонь до минимума"),
+    text("Насыпьте гречку в кастрюлю"),
+    text("Добавьте соль"),
+    text("Плотно закройте кастрюлю крышкой"),
+    text("Варите 15-20 минут, не открывая крышку"),
+    text("Выключите огонь"),
+    text("Дайте гречке постоять под крышкой ещё 5-10 минут"),
+  ]}
+/>

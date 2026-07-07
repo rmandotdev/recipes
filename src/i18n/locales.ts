@@ -27,9 +27,35 @@ export const LOCALES_TABLE = {
         other: "чайной ложки",
       },
     },
+    tablespoon: {
+      en: { one: "tablespoon", other: "tablespoons" },
+      ru: {
+        one: "столовая ложка",
+        few: "столовые ложки",
+        many: "столовых ложек",
+        other: "столовой ложки",
+      },
+    },
   },
 
   items: {
+    bacon: {
+      en: { other: "bacon" },
+      ru: { other: "бекон" },
+    },
+    "black-pepper": {
+      en: { other: "black pepper" },
+      ru: { other: "чёрный перец" },
+    },
+    "bouillon-cube": {
+      en: { one: "bouillon cube", other: "bouillon cubes" },
+      ru: {
+        one: "бульонный кубик",
+        few: "бульонных кубика",
+        many: "бульонных кубиков",
+        other: "бульонного кубика",
+      },
+    },
     egg: {
       en: { one: "egg", other: "eggs" },
       ru: { one: "яйцо", many: "яиц", other: "яйца" },
@@ -37,6 +63,10 @@ export const LOCALES_TABLE = {
     lemon: {
       en: { one: "lemon", other: "lemons" },
       ru: { one: "лимон", many: "лимонов", other: "лимона" },
+    },
+    noodles: {
+      en: { one: "noodle", other: "noodles" },
+      ru: { other: "лапша" },
     },
     sugar: {
       en: { other: "sugar" },
@@ -58,6 +88,15 @@ export const LOCALES_TABLE = {
       en: { one: "carrot", other: "carrots" },
       ru: { one: "морковка", many: "морковок", other: "морковки" },
     },
+    "chicken-thigh": {
+      en: { one: "chicken thigh", other: "chicken thighs" },
+      ru: {
+        one: "куриное бедро",
+        few: "куриных бедра",
+        many: "куриных бёдер",
+        other: "куриного бедра",
+      },
+    },
     potato: {
       en: { one: "potato", other: "potatoes" },
       ru: { one: "картошка", many: "картошек", other: "картошки" },
@@ -66,13 +105,45 @@ export const LOCALES_TABLE = {
       en: { one: "onion", other: "onions" },
       ru: { one: "луковица", many: "луковиц", other: "луковицы" },
     },
+    paprika: {
+      en: { other: "paprika" },
+      ru: { other: "паприка" },
+    },
+    parmesan: {
+      en: { other: "parmesan" },
+      ru: { other: "пармезан" },
+    },
     rice: {
       en: { other: "rice" },
       ru: { other: "рис" },
     },
+    buckwheat: {
+      en: { other: "buckwheat" },
+      ru: { other: "гречка" },
+    },
     salt: {
       en: { other: "salt" },
       ru: { other: "соль" },
+    },
+    spaghetti: {
+      en: { other: "spaghetti" },
+      ru: { other: "спагетти" },
+    },
+    "sunflower-oil": {
+      en: { other: "sunflower oil" },
+      ru: { other: "подсолнечное масло" },
+    },
+    flour: {
+      en: { other: "flour" },
+      ru: { other: "мука" },
+    },
+    rhubarb: {
+      en: { other: "rhubarb" },
+      ru: { other: "ревень" },
+    },
+    butter: {
+      en: { other: "butter" },
+      ru: { other: "масло" },
     },
   },
 } as const satisfies Locales;

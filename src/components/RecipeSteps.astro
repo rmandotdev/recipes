@@ -1,0 +1,13 @@
+---
+import type { RecipeStep } from "#lib/instructions";
+
+interface Props {
+  steps: RecipeStep[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol>
+  {steps.map((step) => <li>{step.text}</li>)}
+</ol>

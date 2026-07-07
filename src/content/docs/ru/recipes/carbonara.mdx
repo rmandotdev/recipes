@@ -1,0 +1,49 @@
+---
+title: Карбонара
+description: Как приготовить карбонару.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
+
+## Ингредиенты
+
+<Ingredients
+  items={[
+    { id: "spaghetti", amount: 500, unit: "g" },
+    { id: "bacon", amount: 250, unit: "g" },
+    { id: "egg", amount: 4 },
+    { id: "parmesan", amount: 50, unit: "g" },
+    { id: "black-pepper", amount: 1, unit: "teaspoon" },
+    { id: "paprika", amount: 0.5, unit: "teaspoon" },
+    { id: "sunflower-oil", amount: 1, unit: "tablespoon" },
+    { id: "water", amount: 3, unit: "litre" },
+    { id: "salt", amount: 1, unit: "tablespoon" },
+  ]}
+/>
+
+## Приготовление
+
+<RecipeSteps
+  steps={[
+    text("Вскипятите подсоленную воду"),
+    text("Сварите спагетти до al dente"),
+    text(
+      "Пока паста варится, обжарьте бекон на подсолнечном масле, пока он не станет мягким и не вытопится жир",
+    ),
+    text("Отделите 3 желтка. Добавьте 1 целое яйцо"),
+    text("Взбейте яйца с пармезаном, чёрным перцем и паприкой"),
+    text("Отлейте 300 мл воды от пасты. Слейте остальную воду"),
+    text(
+      "Убавьте огонь до минимума. Добавьте спагетти в сковороду с беконом. Перемешайте",
+    ),
+    text("Снимите с огня"),
+    text("Влейте яичную смесь в пасту. Быстро перемешайте"),
+    text("Верните на слабый огонь. Помешивайте около 1 минуты"),
+    text("При необходимости добавляйте воду от пасты постепенно"),
+    text(
+      "Подавайте с дополнительным пармезаном, чёрным перцем и паприкой по вкусу",
+    ),
+  ]}
+/>

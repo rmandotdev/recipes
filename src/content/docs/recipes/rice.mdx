@@ -4,6 +4,8 @@ description: How to make Rice.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -21,14 +23,26 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 If you have a multi-cooker, the recipe is simple:
 
-1. Pour the rice into the multi-cooker.
-2. Add the water.
-3. Add a teaspoon of salt.
-4. Let it cook for 50-55 minutes.
+<RecipeSteps
+  steps={[
+    text("Pour the rice into the multi-cooker"),
+    text("Add the water"),
+    text("Add a teaspoon of salt"),
+    text("Let it cook for 50-55 minutes"),
+  ]}
+/>
 
 ### In a Pot
 
-1. Place the rice in a pot and add the water.
-2. Add the salt, place on the stove, and bring to a boil.
-3. Once the water boils, reduce the heat to low, cover the pot tightly with a lid, and simmer for 15-20 minutes. It is important not to open the lid or stir the rice during this process.
-4. Remove the pot from the heat and let the rice sit covered for another 10 minutes.
+<RecipeSteps
+  steps={[
+    text("Place the rice in a pot and add the water"),
+    text("Add the salt, place on the stove, and bring to a boil"),
+    text(
+      "Once the water boils, reduce the heat to low, cover the pot tightly with a lid, and simmer for 15-20 minutes. It is important not to open the lid or stir the rice during this process",
+    ),
+    text(
+      "Remove the pot from the heat and let the rice sit covered for another 10 minutes",
+    ),
+  ]}
+/>

@@ -4,6 +4,8 @@ description: How to make Lemonade.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -17,11 +19,17 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Instructions
 
-1. Slice the lemons.
-2. Put the lemons, sugar and water in a large pot.
-3. Bring to a boil.
-4. Turn off the heat.
-5. Wait 15-20 minutes.
-6. Pour the lemonade into different containers or simply remove the lemons.
-7. Wait until it cools down to room temperature.
-8. Place in the fridge and wait until it is cold.
+<RecipeSteps
+  steps={[
+    text("Slice the lemons"),
+    text("Put the lemons, sugar and water in a large pot"),
+    text("Bring to a boil"),
+    text("Turn off the heat"),
+    text("Wait 15-20 minutes"),
+    text(
+      "Pour the lemonade into different containers or simply remove the lemons",
+    ),
+    text("Wait until it cools down to room temperature"),
+    text("Place in the fridge and wait until it is cold"),
+  ]}
+/>

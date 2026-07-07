@@ -4,6 +4,8 @@ description: How to make Fried Eggs.
 ---
 
 import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
 
 ## Ingredients
 
@@ -11,6 +13,12 @@ import Ingredients from "#components/RecipeIngredients.astro";
 
 ## Instructions
 
-1. Heat a non-stick skillet over medium-high heat.
-2. Crack the eggs directly into the pan.
-3. Cook for 2 to 3 minutes until the whites are set but the yolks are still runny.
+<RecipeSteps
+  steps={[
+    text("Heat a non-stick skillet over medium-high heat"),
+    text("Crack the eggs directly into the pan"),
+    text(
+      "Cook for 2 to 3 minutes until the whites are set but the yolks are still runny",
+    ),
+  ]}
+/>

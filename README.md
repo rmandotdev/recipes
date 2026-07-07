@@ -1,3 +1,3 @@
 # Recipes
 
-<https://recipes.rman.dev>
+[recipes.rman.dev](https://recipes.rman.dev)
