@@ -133,6 +133,18 @@ export const LOCALES_TABLE = {
       en: { other: "sunflower oil" },
       ru: { other: "подсолнечное масло" },
     },
+    flour: {
+      en: { other: "flour" },
+      ru: { other: "мука" },
+    },
+    rhubarb: {
+      en: { other: "rhubarb" },
+      ru: { other: "ревень" },
+    },
+    butter: {
+      en: { other: "butter" },
+      ru: { other: "масло" },
+    },
   },
 } as const satisfies Locales;
 

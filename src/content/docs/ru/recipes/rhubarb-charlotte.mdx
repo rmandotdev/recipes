@@ -1,0 +1,39 @@
+---
+title: Шарлотка с ревенем
+description: Как приготовить шарлотку с ревенем.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
+
+## Ингредиенты
+
+<Ingredients
+  items={[
+    { id: "egg", amount: 4 },
+    { id: "sugar", amount: 1, unit: "cup" },
+    { id: "flour", amount: 1, unit: "cup" },
+    { id: "rhubarb", amount: 300, unit: "g" },
+    { id: "butter", amount: 1, unit: "tablespoon" },
+  ]}
+/>
+
+## Приготовление
+
+<RecipeSteps
+  steps={[
+    text("Разогрейте духовку до 180°C"),
+    text("Смажьте форму для выпечки маслом"),
+    text(
+      "Вымойте ревень, нарежьте мелкими кусочками и равномерно выложите в форму",
+    ),
+    text("Разделите яйца"),
+    text("Взбейте желтки с сахаром"),
+    text("Взбейте белки"),
+    text("Добавьте муку в желтковую массу и перемешайте"),
+    text("Добавьте взбитые белки, перемешайте"),
+    text("Вылейте тесто поверх ревеня"),
+    text("Выпекайте 45-50 минут до золотистого цвета"),
+  ]}
+/>

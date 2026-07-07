@@ -1,0 +1,39 @@
+---
+title: Charlotte with rhubarb
+description: How to make Charlotte with rhubarb.
+---
+
+import Ingredients from "#components/RecipeIngredients.astro";
+import RecipeSteps from "#components/RecipeSteps.astro";
+import { text } from "#lib/instructions";
+
+## Ingredients
+
+<Ingredients
+  items={[
+    { id: "egg", amount: 4 },
+    { id: "sugar", amount: 1, unit: "cup" },
+    { id: "flour", amount: 1, unit: "cup" },
+    { id: "rhubarb", amount: 300, unit: "g" },
+    { id: "butter", amount: 1, unit: "tablespoon" },
+  ]}
+/>
+
+## Instructions
+
+<RecipeSteps
+  steps={[
+    text("Preheat the oven to 180°C"),
+    text("Grease a baking dish with butter"),
+    text(
+      "Wash the rhubarb, cut into small pieces, and spread evenly in the dish",
+    ),
+    text("Separate the eggs"),
+    text("Beat the yolks with sugar until pale and fluffy"),
+    text("Whip the egg whites until stiff peaks form"),
+    text("Add the flour to the yolk mixture and mix"),
+    text("Fold in the whipped egg whites"),
+    text("Pour the batter over the rhubarb"),
+    text("Bake for 45-50 minutes until golden brown"),
+  ]}
+/>
