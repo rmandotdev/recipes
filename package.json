@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.0",
-    "astro": "7.3.1"
+    "astro": "7.3.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.12",
+    "@biomejs/biome": "2.5.13",
     "@gameroman/config": "0.3.0",
     "@types/bun": "1.4.2",
     "wrangler": "4.130.0"
