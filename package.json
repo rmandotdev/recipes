@@ -18,7 +18,7 @@
   "overrides": {
     "@emnapi/runtime": "1.11.3",
     "sharp": "0.35.4",
-    "unstorage": "2.0.0-alpha.10"
+    "unstorage": "2.0.0-alpha.11"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.0",
