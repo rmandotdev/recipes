@@ -11,7 +11,11 @@ const { items } = Astro.props;
 
 <section class="ingredients-container">
   <ul class="ingredient-list">
-    {items.map((item) => <li><RecipeIngredient {item}/></li>)}
+    {items.map((item) => (
+      <li>
+        <RecipeIngredient {item} />
+      </li>
+    ))}
   </ul>
 </section>
 
