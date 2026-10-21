@@ -13,7 +13,10 @@ import { text } from "#lib/instructions";
   items={[
     { id: "chicken-thigh", amount: 1200, unit: "g" },
     { id: "water", amount: 4, unit: "litre" },
-    { id: "bouillon-cube", amount: 2 },
+    { id: "bouillon-cube", amount: 4 },
+    { id: "dried-onion", amount: 1, unit: "tablespoon" },
+    { id: "dried-tomato", amount: 1, unit: "tablespoon" },
+    { id: "dried-carrot", amount: 1, unit: "tablespoon" },
     { id: "noodles", amount: 180, unit: "g" },
   ]}
 />
@@ -22,12 +25,19 @@ import { text } from "#lib/instructions";
 
 <RecipeSteps
   steps={[
-    text("Put the chicken thighs in a pot with the water. Bring to a boil"),
-    text("Skim off any foam"),
-    text("Add the bouillon cubes"),
-    text("Simmer for 30-40 minutes until the chicken is cooked through"),
-    text("Remove the chicken thighs. Shred the meat and return it to the pot"),
-    text("Add the noodles and cook for 5-7 minutes until tender"),
-    text("Serve hot"),
+    text("Cut the chicken thighs into small pieces"),
+    text("Bring the water to a boil in a pot and add the chicken to the hot water"),
+    text(
+      "Skim off the foam as it boils, continuing until no more appears",
+    ),
+    text("Add the bouillon cubes to the boiling water and stir well"),
+    text("Add the dried onion, dried tomatoes, and dried carrot"),
+    text(
+      "Stir, reduce the heat to low, cover with a lid, and cook for 30 minutes",
+    ),
+    text("Turn off the heat and add the noodles"),
+    text(
+      "Cover and let stand for 10 minutes, stirring occasionally",
+    ),
   ]}
 />

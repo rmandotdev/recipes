@@ -88,6 +88,18 @@ export const LOCALES_TABLE = {
       en: { one: "carrot", other: "carrots" },
       ru: { one: "морковка", many: "морковок", other: "морковки" },
     },
+    "dried-onion": {
+      en: { one: "dried onion", other: "dried onions" },
+      ru: { one: "сушёный лук", other: "сушёного лука" },
+    },
+    "dried-tomato": {
+      en: { one: "dried tomato", other: "dried tomatoes" },
+      ru: { one: "сушёный помидор", other: "сушёных помидоров" },
+    },
+    "dried-carrot": {
+      en: { one: "dried carrot", other: "dried carrots" },
+      ru: { one: "сушёная морковка", other: "сушёной морковки" },
+    },
     "chicken-thigh": {
       en: { one: "chicken thigh", other: "chicken thighs" },
       ru: {
