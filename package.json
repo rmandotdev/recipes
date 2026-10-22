@@ -21,7 +21,7 @@
     "unstorage": "2.0.0-beta.0"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.42.0",
+    "@astrojs/starlight": "0.42.6",
     "astro": "7.3.2"
   },
   "devDependencies": {
